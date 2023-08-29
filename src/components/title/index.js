@@ -1,16 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
+import styles from './style';
 
 export default function Title(){
   return(
-    <View style={style.title}>
-      <Text>ONEBITHEALTH...</Text>
+    <View style={styles.boxTitle}>
+      <Text style={styles.textTitle} >ONEBITHEALTH...</Text>
     </View>
   );
 };
-
-const style = StyleSheet.create({
-  title: {
-    backgroundColor: 'blue',
-  }
-});
