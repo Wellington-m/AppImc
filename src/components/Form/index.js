@@ -13,7 +13,7 @@ export default function Form(){
 
   function imcCalculator(){
     return setImc((weight/(height*height)).toFixed(2));
-  }
+  };
 
   function validationImc() {
     if(weight != null && height != null){
@@ -23,11 +23,11 @@ export default function Form(){
       setMessageImc('Seu imc é: ');
       setTextButton('Calcular novamente');
       return
-    }
+    };
     setImc(null);
     setTextButton('Calcular');
     setMessageImc('Preencha o peso e altura');
-  }
+  };
 
   return(
     <View style={styles.formContext}>
@@ -48,11 +48,12 @@ export default function Form(){
           value={weight}
           placeholder='Ex: 80.9'
           keyboardType='numeric'
+          onSubmitEditing={() => validationImc()} // Chamada quando "Enter" é pressionado
         />
         <TouchableOpacity
           style={styles.buttonCalculator}
           onPress={() => {
-            validationImc()
+            validationImc();
           }}
         >
           <Text style={styles.textButtonCalculator}>{textButton}</Text>
